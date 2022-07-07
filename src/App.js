@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import {
+	Navbar,
+	Homepage,
+	CryptoDetails,
+	Cryptocurrencies,
+	News,
+	NotFound,
+} from "./components";
+import "./App.css";
+import { useSelector } from "react-redux";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	let { isDarkMode } = useSelector((state) => state.themeReducer);
+
+	return (
+		<>
+			<Navbar />
+			<main /* Margin set in Navbar CSS with media queries*/
+				style={{
+					backgroundColor: `${isDarkMode ? "black" : "white"}`,
+					color: `${isDarkMode ? "white" : "black"}`,
+				}}
+			>
+				<Routes>
+					<Route path="/" element={<App />} />
+					<Route index element={<Homepage />} />
+					<Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
+					<Route path="/news" element={<News isSimplified={false} />} />
+					<Route path="/cryptocurrencies/:coinId" element={<CryptoDetails />} />
+					<Route path="*" element={<NotFound />} />
+				</Routes>
+			</main>
+		</>
+	);
+};
 
 export default App;
