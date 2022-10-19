@@ -1,0 +1,15 @@
+.app{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 900px) {
+  .app{
+    flex-direction: column;
+  }
+}

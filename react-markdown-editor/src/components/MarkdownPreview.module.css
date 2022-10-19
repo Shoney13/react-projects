@@ -1,0 +1,17 @@
+.preview_main{
+  min-height: 100%;
+  width: 100%;
+  padding: 1rem;
+}
+.preview_title{
+  content: 'Preview';
+  box-shadow: black 0px 0px 0px 1px;
+  width: 100%;
+  display: block;
+  padding: 0.3rem 1rem;
+}
+.preview_main img {
+  display: block;
+  max-width: 90%;
+  margin: 2rem auto;
+}

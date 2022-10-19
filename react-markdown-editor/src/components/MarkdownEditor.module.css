@@ -1,0 +1,31 @@
+.editor_main{
+  width: 100%;
+  /* min-height: 100vh; */
+  padding: 1rem;
+  border-right: 1px solid black;
+  min-height: 100%;
+}
+.main_editor{
+  width: 99%;
+  height: 99vh;
+  resize: horizontal; 
+  padding: 1rem;
+  border: none;
+  outline: none;
+
+}
+.editor_title{
+  box-shadow: black 0px 0px 0px 1px;
+  width: 99%;
+  display: block;
+  padding: 0.3rem 1rem;
+  margin-bottom: 2px;
+}
+@media screen and (max-width: 900px) {
+  .editor_main{
+    resize: vertical;
+    min-height: 50vh;
+    border-bottom: 1px solid black;
+    border-right: none;
+  }
+}
