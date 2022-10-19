@@ -1,0 +1,92 @@
+.quote_box_main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	padding: 1rem;
+	background-color: #fbfcfc2d;
+	color: white;
+	max-width: 400px;
+	gap: 2rem;
+}
+
+.quote_box_quote {
+	word-wrap: break-word;
+	color: white;
+	font-size: 3rem;
+	box-shadow: black 0px 2px 0px -1px;
+	padding-bottom: 1rem;
+	text-align: center;
+	animation: fadeIn 200ms forwards;
+}
+.fade_out {
+	animation: fadeOut 200ms forwards;
+}
+
+@keyframes fadeOut {
+	0% {
+		color: white;
+	}
+	100% {
+		color: rgba(0, 0, 0, 0);
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		color: rgba(0, 0, 0, 0);
+	}
+	100% {
+		color: white;
+	}
+}
+
+.quote_box_quote::before {
+	content: open-quote;
+}
+.quote_box_quote::after {
+	content: close-quote;
+}
+
+.quote_box_author {
+	font-size: 2rem;
+}
+
+.quote_box_button_container {
+	display: flex;
+	gap: 1rem;
+}
+
+.quote_box_button_container button,
+.quote_box_button_container a {
+	/* background: none; */
+	border: none;
+	padding: 0.1rem 0.7rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2rem;
+	/* box-shadow: gray 0px 0px 0px 1px; */
+	width: 130px;
+	border-radius: 10px;
+	transition: all 200ms linear;
+	cursor: pointer;
+}
+
+.quote_box_share {
+	background-color: #1da1f2;
+	fill: white;
+}
+.quote_box_share:hover {
+	fill: #1da1f2;
+	background-color: white;
+}
+.quote_box_random {
+	background-color: black;
+	color: white;
+}
+.quote_box_random:hover {
+	color: black;
+	background-color: white;
+}
